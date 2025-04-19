@@ -49,25 +49,16 @@
                 <img src="src/dev1.png" class="h-7 invert-0 hover:saturate-200 dark:invert transition duration-300" alt="dev Logo">
             </a>
             <!-- Mobile Theme Toggle -->
-            <button x-data="{
-                theme: localStorage.theme,
-                toggle() {
-                    this.theme = this.theme === 'dark' ? 'light' : 'dark';
-                    localStorage.theme = this.theme;
-                    document.documentElement.classList.toggle('dark', this.theme === 'dark');
-                }
-                }" 
+            <button id="theme-toggle-mobile" 
                 type="button" 
-                class="md:hidden appearance-none text-neutral-300 hover:text-neutral-900 focus:text-neutral-900 dark:hover:text-neutral-100 dark:focus:text-neutral-100 transition-colors ease-in-out duration-300 px-2.5" 
-                x-on:click="toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4" x-show="theme === 'dark'">
+                class="md:hidden appearance-none text-neutral-300 hover:text-neutral-900 focus:text-neutral-900 dark:hover:text-neutral-100 dark:focus:text-neutral-100 transition-colors ease-in-out duration-300 px-2.5">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4" id="dark-icon-mobile" style="display: none;">
                     <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd"/>
                 </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4" x-show="theme === 'light'" style="display: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4" id="light-icon-mobile">
                     <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z"/>
                 </svg>
             </button>
-
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center gap-x-1">
                 <a href="#about" class="px-4 py-2 rounded-lg transition-colors ease-in-out duration-200 group hover:bg-neutral-950/5 dark:hover:bg-neutral-100/15">
@@ -82,24 +73,17 @@
                 <a href="#contact" class="px-4 py-2 rounded-lg transition-colors ease-in-out duration-200 group hover:bg-neutral-950/5 dark:hover:bg-neutral-100/15">
                     Contact
                 </a>
-                <button x-data="{
-                    theme: localStorage.theme,
-                    toggle() {
-                        this.theme = this.theme === 'dark' ? 'light' : 'dark';
-                        localStorage.theme = this.theme;
-                        document.documentElement.classList.toggle('dark', this.theme === 'dark');
-                    }
-                }" 
+                
+                <button id="theme-toggle-desktop" 
                 type="button" 
-                class="appearance-none text-neutral-300 hover:text-neutral-900 focus:text-neutral-900 dark:hover:text-neutral-100 dark:focus:text-neutral-100 transition-colors ease-in-out duration-300 px-2.5" 
-                x-on:click="toggle">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4" x-show="theme === 'dark'">
-                        <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd"/>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4" x-show="theme === 'light'" style="display: none;">
-                        <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z"/>
-                    </svg>
-                </button>
+                class="appearance-none text-neutral-300 hover:text-neutral-900 focus:text-neutral-900 dark:hover:text-neutral-100 dark:focus:text-neutral-100 transition-colors ease-in-out duration-300 px-2.5">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4" id="dark-icon-desktop" style="display: none;">
+                    <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4" id="light-icon-desktop">
+                    <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z"/>
+                </svg>
+            </button>
             </nav>
         </div>
     </header>
@@ -359,16 +343,50 @@
 
     <script>
         // Theme toggle functionality
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
+        const themeToggles = {
+            mobile: {
+                toggle: document.getElementById('theme-toggle-mobile'),
+                darkIcon: document.getElementById('dark-icon-mobile'),
+                lightIcon: document.getElementById('light-icon-mobile')
+            },
+            desktop: {
+                toggle: document.getElementById('theme-toggle-desktop'),
+                darkIcon: document.getElementById('dark-icon-desktop'),
+                lightIcon: document.getElementById('light-icon-desktop')
+            }
+        };
 
-        document.getElementById('theme-toggle').addEventListener('click', function() {
-            document.documentElement.classList.toggle('dark')
-            localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light'
-        })
+        // Update icons function
+        const updateIcons = (isDarkMode) => {
+            Object.values(themeToggles).forEach(({darkIcon, lightIcon}) => {
+                darkIcon.style.display = isDarkMode ? 'block' : 'none';
+                lightIcon.style.display = isDarkMode ? 'none' : 'block';
+            });
+        };
+
+        // Initialize theme
+        const initializeTheme = () => {
+            const isDarkMode = localStorage.theme === 'dark' || 
+                (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            
+            document.documentElement.classList.toggle('dark', isDarkMode);
+            updateIcons(isDarkMode);
+        };
+
+        // Toggle theme function
+        const toggleTheme = () => {
+            const isDarkMode = document.documentElement.classList.toggle('dark');
+            localStorage.theme = isDarkMode ? 'dark' : 'light';
+            updateIcons(isDarkMode);
+        };
+
+        // Initialize theme on page load
+        initializeTheme();
+
+        // Add click event listeners to both toggles
+        Object.values(themeToggles).forEach(({toggle}) => {
+            toggle.addEventListener('click', toggleTheme);
+        });
     </script>
 </body>
 </html>

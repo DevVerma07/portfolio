@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Kumar Verma - Software Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-mono">
+    <!-- Navigation -->
+    <header x-data="{
+        scrolled: false,
+        init() {
+            window.addEventListener('scroll', () => {
+                this.scrolled = window.scrollY > 50;
+            });
+        }
+    }" 
+    :class="scrolled ? ' w-full md:mt-8 md:rounded-full md:max-w-4xl' : 'w-full'" 
+    class="fixed left-1/2 transform left-0 right-0 -translate-x-1/2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 shadow-sm shadow-gray-200 dark:shadow-gray-800 transition-all duration-300 ease-in-out">
+    <div class="px-4 sm:px-8 py-4 flex items-center justify-between max-w-4xl mx-auto"
+        :class="scrolled ? 'lg:py-2' : 'lg:py-4'">
+            <a href="#" class="text-xl font-semibold tracking-tight group hover:underline decoration-neutral-200 dark:text-white">
+                <img src="src/dev1.png" class="h-7 invert-0 hover:saturate-200 dark:invert transition duration-300" alt="dev Logo">
+            </a>
+            <!-- Mobile Theme Toggle -->
+            <button x-data="{
+                theme: localStorage.theme,
+                toggle() {
+                    this.theme = this.theme === 'dark' ? 'light' : 'dark';
+                    localStorage.theme = this.theme;
+                    document.documentElement.classList.toggle('dark', this.theme === 'dark');
+                }
+                }" 
+                type="button" 
+                class="md:hidden appearance-none text-neutral-300 hover:text-neutral-900 focus:text-neutral-900 dark:hover:text-neutral-100 dark:focus:text-neutral-100 transition-colors ease-in-out duration-300 px-2.5" 
+                x-on:click="toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4" x-show="theme === 'dark'">
+                    <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4" x-show="theme === 'light'" style="display: none;">
+                    <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z"/>
+                </svg>
+            </button>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-x-1">
+                <a href="#about" class="px-4 py-2 rounded-lg transition-colors ease-in-out duration-200 group hover:bg-neutral-950/5 dark:hover:bg-neutral-100/15">
+                    About
+                </a>
+                <a href="#skills" class="px-4 py-2 rounded-lg transition-colors ease-in-out duration-200 group hover:bg-neutral-950/5 dark:hover:bg-neutral-100/15">
+                    Skills
+                </a>
+                <a href="#projects" class="px-4 py-2 rounded-lg transition-colors ease-in-out duration-200 group hover:bg-neutral-950/5 dark:hover:bg-neutral-100/15">
+                    Projects
+                </a>
+                <a href="#contact" class="px-4 py-2 rounded-lg transition-colors ease-in-out duration-200 group hover:bg-neutral-950/5 dark:hover:bg-neutral-100/15">
+                    Contact
+                </a>
+                <button x-data="{
+                    theme: localStorage.theme,
+                    toggle() {
+                        this.theme = this.theme === 'dark' ? 'light' : 'dark';
+                        localStorage.theme = this.theme;
+                        document.documentElement.classList.toggle('dark', this.theme === 'dark');
+                    }
+                }" 
+                type="button" 
+                class="appearance-none text-neutral-300 hover:text-neutral-900 focus:text-neutral-900 dark:hover:text-neutral-100 dark:focus:text-neutral-100 transition-colors ease-in-out duration-300 px-2.5" 
+                x-on:click="toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4" x-show="theme === 'dark'">
+                        <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4" x-show="theme === 'light'" style="display: none;">
+                        <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z"/>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-8 py-20 flex flex-col md:flex-row items-center gap-8 relative">
+            <!-- Left side - Image -->
+            <div class="w-full md:w-1/3 flex justify-center animate-fade-in animate-slide-up">
+            <img src="src/devinfo.png" alt="Dev Kumar" class="w-36 h-36 md:w-48 md:h-48 rounded-full object-cover hover:scale-105 transition duration-300 shadow-xl shadow-indigo-500/10 hover:shadow-indigo-500/20">
+            </div>
+            
+            <!-- Right side - Content -->
+            <div class="w-full md:w-2/3 text-center md:text-left">
+            <h1 class="text-3xl sm:text-4xl md:text-7xl font-bold mb-4 animate-slide-up animate-fade-in">
+                Hi, I'm Dev Kumar Verma
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8 animate-slide-up animate-fade-in-delayed">
+                Full Stack Developer
+            </p>
+            <div class="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4 animate-slide-up animate-fade-in-delayed">
+                <a href="#contact" class="bg-indigo-600 dark:bg-indigo-500 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-all hover:scale-105">
+                Get in Touch
+                </a>
+                <a href="#projects" class="border border-indigo-600 dark:border-indigo-500 text-indigo-600 dark:text-indigo-400 px-8 py-3 rounded-lg hover:bg-indigo-50 dark:hover:bg-indigo-900/50 transition-all hover:scale-105">
+                View My Work
+                </a>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        I'm a passionate full-stack developer with expertise in modern web technologies.
+                        With several years of experience in building robust web applications,
+                        I focus on creating efficient, scalable, and user-friendly solutions.
+                    </p>
+                </div>
+                <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg">
+                    <h3 class="font-bold mb-4">Quick Facts</h3>
+                    <ul class="space-y-2">
+                        <li>🎓 B.Tech in Computer Science</li>
+                        <li>💼 2+ years of development experience</li>
+                        <li>🌍 India</li>
+                        <li>🚀 Love learning new technologies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-12 sm:py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-8">
+            <h2 class="text-3xl font-bold mb-8 dark:text-white">Technical Skills</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Frontend -->
+                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold mb-4 dark:text-gray-200">Frontend</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                    <li><i class="fab fa-react mr-2 text-blue-500"></i>React.js</li>
+                    <li><i class="fab fa-vuejs mr-2 text-green-500"></i>Vue.js</li>
+                    <li><i class="fab fa-js mr-2 text-yellow-400"></i>JavaScript</li>
+                    <li><i class="fab fa-html5 mr-2 text-orange-500"></i>HTML5/CSS3</li>
+                    <li class="inline-flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 me-1" viewBox="0 0 512 234.84">
+                        <path fill="#77C1D2" d="M398.22 0L512 113.28 398.22 226.56 284.44 113.28z"/>
+                        <path fill="#2D3441" d="M113.78 0l235.87 234.84H122.1L0 113.28z"/>
+                        </svg> Alpine.js
+                    </li>
+                    <li><i class="fas fa-bolt mr-2 text-indigo-400"></i>AJAX</li>
+                    <li><i class="fab fa-bootstrap mr-2 text-purple-600"></i>Bootstrap</li>
+                    <li><i class="fas fa-wind mr-2 text-cyan-400"></i>Tailwind CSS</li>
+                    </ul>
+                </div>
+            
+                <!-- Backend -->
+                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold mb-4 dark:text-gray-200">Backend</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                    <li><i class="fab fa-laravel mr-2 text-red-500"></i>Laravel</li>
+                    <li><i class="fab fa-php mr-2 text-indigo-500"></i>PHP</li>
+                    <li><i class="fab fa-node mr-2 text-green-500"></i>Node.js</li>
+                    <li><i class="fas fa-server mr-2 text-gray-500"></i>Express.js</li>
+                    <li><i class="fas fa-bolt mr-2 text-yellow-500"></i>Livewire</li>
+                    </ul>
+                </div>
+            
+                <!-- Programming -->
+                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold mb-4 dark:text-gray-200">Programming</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                    <li><i class="fas fa-code mr-2 text-blue-500"></i>C++</li>
+                    <li><i class="fas fa-code mr-2 text-blue-400"></i>C</li>
+                    <li><i class="fas fa-database mr-2 text-purple-500"></i>SQL</li>
+                    </ul>
+                </div>
+            
+                <!-- Database -->
+                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold mb-4 dark:text-gray-200">Database</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                    <li><i class="fas fa-database mr-2 text-green-600"></i>MongoDB</li>
+                    <li><i class="fas fa-database mr-2 text-blue-600"></i>MySQL / SQL</li>
+                    </ul>
+                </div>
+            
+                <!-- Tools & Cloud -->
+                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold mb-4 dark:text-gray-200">Tools & Cloud</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                    <li><i class="fab fa-aws mr-2 text-orange-500"></i>AWS</li>
+                    <li><i class="fab fa-git-alt mr-2 text-red-500"></i>Git</li>
+                    <li><i class="fab fa-linux mr-2 text-yellow-500"></i>Linux</li>
+                    </ul>
+                </div>
+            
+                <!-- Currently Learning -->
+                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold mb-4 dark:text-gray-200">Currently Learning</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                    <li><i class="fab fa-docker mr-2 text-emerald-500"></i>Docker</li>
+                    </ul>
+                </div>
+            
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-12 sm:py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-8">
+            <h2 class="text-3xl font-bold mb-8 dark:text-white">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <!-- WorkSuite -->
+                <div class="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden transform hover:scale-[1.02] transition">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 dark:text-white">WorkSuite - Project Management SaaS</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Complete project management solution with CRM, HR, finance, and team collaboration features. Trusted by 31,000+ businesses worldwide.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-300 rounded-full text-sm">Laravel</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Vue.js</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 rounded-full text-sm">RESTful API</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 rounded-full text-sm">MySQL</span>
+                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-300 rounded-full text-sm">AWS</span>
+                        </div>
+                        <a href="https://codecanyon.net/item/worksuite-saas-project-management-system/23263417" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">View Project →</a>
+                    </div>
+                </div>
+
+                <!-- TableTrack -->
+                <div class="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden transform hover:scale-[1.02] transition">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 dark:text-white">TableTrack - Restaurant Management</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Modern restaurant management system with real-time table booking, menu management, and order tracking.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-300 rounded-full text-sm">Laravel</span>
+                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-600 dark:text-yellow-300 rounded-full text-sm">Livewire</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Alpine.js</span>
+                        </div>
+                        <a href="https://codecanyon.net/item/tabletrack-the-complete-saas-restaurant-management-solution/55116396" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">View Project →</a>
+                    </div>
+                </div>
+
+                <!-- SocietyPro -->
+                <div class="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden transform hover:scale-[1.02] transition">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 dark:text-white">SocietyPro - Housing Society Management</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Comprehensive society management solution with maintenance billing, complaint management, and visitor tracking.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 rounded-full text-sm">Laravel</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Livewire</span>
+                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-300 rounded-full text-sm">JavaScript</span>
+                        </div>
+                        <a href="https://codecanyon.net/item/societypro-saas-society-management-software/57303227" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8">Get in Touch</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+                    </p>
+                    <div class="space-y-4">
+                        <a href="mailto:dev.kumar@example.com" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            dev.kumar@example.com
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                            <i class="fab fa-linkedin mr-2"></i>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com" target="_blank" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                            <i class="fab fa-github mr-2"></i>
+                            GitHub
+                        </a>
+                        <a href="#" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 relative">
+                            <i class="fab fa-youtube mr-2"></i>
+                            YouTube
+                            <span class="ml-2 px-2 py-0.5 text-xs bg-indigo-100 text-indigo-800 rounded-full animate-pulse border border-indigo-300 shadow-[0_0_10px_rgba(79,70,229,0.3)] dark:bg-indigo-900/30 dark:text-indigo-200 dark:border-indigo-700/50">Coming Soon</span>
+                        </a>
+                        <a href="path/to/your-cv.pdf" target="_blank" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                            <i class="fas fa-file-download mr-2"></i>
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                    <form>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 dark:text-gray-400 mb-2">Name</label>
+                            <input type="text" class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-indigo-600 focus:border-transparent">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 dark:text-gray-400 mb-2">Email</label>
+                            <input type="email" class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-indigo-600 focus:border-transparent">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 dark:text-gray-400 mb-2">Message</label>
+                            <textarea class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-indigo-600 focus:border-transparent" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 dark:bg-indigo-500 text-white py-2 rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Copyright -->
+    <p class="text-center text-sm text-gray-600 dark:text-gray-400 py-2">
+        © <script>document.write(new Date().getFullYear())</script> <span lang="en">Dev Kumar Verma</span>. All rights reserved.
+    </p>
+
+
+    <script>
+        // Theme toggle functionality
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+            document.documentElement.classList.toggle('dark')
+            localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+        })
+    </script>
+</body>
+</html>

@@ -226,70 +226,93 @@
     <section id="projects" class="py-12 sm:py-20 bg-white dark:bg-gray-900">
         <div class="max-w-4xl mx-auto px-4 sm:px-8">
             <h2 class="text-3xl font-bold mb-8 dark:text-white">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-8">
                 <!-- WorkSuite -->
-                <div class="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden transform hover:scale-[1.02] transition">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2 dark:text-white">WorkSuite - Project Management SaaS</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            Complete project management solution with CRM, HR, finance, and team collaboration features. Trusted by 31,000+ businesses worldwide.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-300 rounded-full text-sm">Laravel</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Vue.js</span>
-                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 rounded-full text-sm">RESTful API</span>
-                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 rounded-full text-sm">MySQL</span>
-                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-300 rounded-full text-sm">AWS</span>
+                <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-yellow-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 p-1 shadow-lg transition-all duration-300 hover:shadow-xl">
+                    <div class="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-lime-300/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative overflow-hidden rounded-xl">
+                        <img src="/src/Worksuite.png" alt="WorkSuite" class="w-full h-48 object-cover object-center transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800 dark:text-white">WorkSuite</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                                Complete project management solution with CRM, HR, finance, and team collaboration features. Trusted by 31,000+ businesses worldwide.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-red-100/80 dark:bg-red-900/80 text-red-600 dark:text-red-300 rounded-full text-sm backdrop-blur-sm">Laravel</span>
+                                <span class="px-3 py-1 bg-blue-100/80 dark:bg-blue-900/80 text-blue-600 dark:text-blue-300 rounded-full text-sm backdrop-blur-sm">Vue.js</span>
+                                <span class="px-3 py-1 bg-green-100/80 dark:bg-green-900/80 text-green-600 dark:text-green-300 rounded-full text-sm backdrop-blur-sm">RESTful API</span>
+                            </div>
+                            <a href="https://codecanyon.net/item/worksuite-saas-project-management-system/23263417" target="_blank" 
+                                class="inline-flex items-center text-indigo-600 dark:text-indigo-400 hover:gap-2 transition-all duration-300">
+                                View Project <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
                         </div>
-                        <a href="https://codecanyon.net/item/worksuite-saas-project-management-system/23263417" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">View Project →</a>
                     </div>
                 </div>
 
                 <!-- TableTrack -->
-                <div class="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden transform hover:scale-[1.02] transition">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2 dark:text-white">TableTrack - Restaurant Management</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            Modern restaurant management system with real-time table booking, menu management, and order tracking.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-300 rounded-full text-sm">Laravel</span>
-                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-600 dark:text-yellow-300 rounded-full text-sm">Livewire</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Alpine.js</span>
+                <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-teal-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 p-1 shadow-lg transition-all duration-300 hover:shadow-xl">
+                    <div class="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative overflow-hidden rounded-xl">
+                        <img src="/src/track.png" alt="TableTrack" class="w-full h-48 object-cover object-center transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800 dark:text-white">TableTrack</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                                Modern restaurant management system with real-time table booking, menu management, and order tracking.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-yellow-100/80 dark:bg-yellow-900/80 text-yellow-600 dark:text-yellow-300 rounded-full text-sm backdrop-blur-sm">Livewire</span>
+                                <span class="px-3 py-1 bg-blue-100/80 dark:bg-blue-900/80 text-blue-600 dark:text-blue-300 rounded-full text-sm backdrop-blur-sm">Alpine.js</span>
+                            </div>
+                            <a href="https://codecanyon.net/item/tabletrack-the-complete-saas-restaurant-management-solution/55116396" target="_blank" 
+                                class="inline-flex items-center text-indigo-600 dark:text-indigo-400 hover:gap-2 transition-all duration-300">
+                                View Project <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
                         </div>
-                        <a href="https://codecanyon.net/item/tabletrack-the-complete-saas-restaurant-management-solution/55116396" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">View Project →</a>
                     </div>
                 </div>
 
                 <!-- SocietyPro -->
-                <div class="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden transform hover:scale-[1.02] transition">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2 dark:text-white">SocietyPro - Housing Society Management</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            Comprehensive society management solution with maintenance billing, complaint management, and visitor tracking.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 rounded-full text-sm">Laravel</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Livewire</span>
-                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-300 rounded-full text-sm">JavaScript</span>
+                <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-rose-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 p-1 shadow-lg transition-all duration-300 hover:shadow-xl">
+                    <div class="absolute inset-0 bg-gradient-to-r from-pink-500/20 to-red-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative overflow-hidden rounded-xl">
+                        <img src="/src/societypro.png" alt="SocietyPro" class="w-full h-48 object-cover object-center transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800 dark:text-white">SocietyPro</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                                Comprehensive society management solution with maintenance billing, complaint management, and visitor tracking.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-purple-100/80 dark:bg-purple-900/80 text-purple-600 dark:text-purple-300 rounded-full text-sm backdrop-blur-sm">Laravel</span>
+                                <span class="px-3 py-1 bg-orange-100/80 dark:bg-orange-900/80 text-orange-600 dark:text-orange-300 rounded-full text-sm backdrop-blur-sm">JavaScript</span>
+                            </div>
+                            <a href="https://codecanyon.net/item/societypro-saas-society-management-software/57303227" target="_blank" 
+                                class="inline-flex items-center text-indigo-600 dark:text-indigo-400 hover:gap-2 transition-all duration-300">
+                                View Project <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
                         </div>
-                        <a href="https://codecanyon.net/item/societypro-saas-society-management-software/57303227" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">View Project →</a>
                     </div>
                 </div>
+
                 <!-- Zunction -->
-                <div class="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden transform hover:scale-[1.02] transition">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2 dark:text-white">Zunction – Home of the Best Laravel & React Developers</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            Discover top-tier Laravel and React developers worldwide on Zunction — your go-to platform for hiring skilled freelance and full-time devs.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Laravel</span>
-                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 rounded-full text-sm">Livewire</span>
-                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-600 dark:text-yellow-300 rounded-full text-sm">Alpine.js</span>
-                            <span class="px-3 py-1 bg-cyan-100 dark:bg-cyan-900 text-cyan-600 dark:text-cyan-300 rounded-full text-sm">AWS</span>
+                <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 p-1 shadow-lg transition-all duration-300 hover:shadow-xl">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-teal-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative overflow-hidden rounded-xl">
+                        <img src="/src/zunction.jpeg" alt="Zunction" class="w-full h-48 object-cover object-center transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800 dark:text-white">Zunction</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                                Discover top-tier developers worldwide on our platform — your go-to solution for hiring skilled freelance and full-time developers.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-blue-100/80 dark:bg-blue-900/80 text-blue-600 dark:text-blue-300 rounded-full text-sm backdrop-blur-sm">Framework</span>
+                                <span class="px-3 py-1 bg-cyan-100/80 dark:bg-cyan-900/80 text-cyan-600 dark:text-cyan-300 rounded-full text-sm backdrop-blur-sm">AWS</span>
+                            </div>
+                            <a href="#" target="_blank" 
+                                class="inline-flex items-center text-indigo-600 dark:text-indigo-400 hover:gap-2 transition-all duration-300">
+                                View Project <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
                         </div>
-                        <a href="https://zunction.io/" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">Visit Zunction →</a>
                     </div>
                 </div>
             </div>
@@ -306,15 +329,15 @@
                         I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
                     </p>
                     <div class="space-y-4">
-                        <a href="mailto:dev.kumar@example.com" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                        <a href="mailto:devkumarverma830@gmail.com" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
                             <i class="fas fa-envelope mr-2"></i>
-                            dev.kumar@example.com
+                            devkumarverma830@gmail.com
                         </a>
-                        <a href="https://linkedin.com" target="_blank" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                        <a href="https://www.linkedin.com/in/dev-kumar-verma" target="_blank" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
                             <i class="fab fa-linkedin mr-2"></i>
                             LinkedIn
                         </a>
-                        <a href="https://github.com" target="_blank" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                        <a href="https://github.com/DevVerma07" target="_blank" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
                             <i class="fab fa-github mr-2"></i>
                             GitHub
                         </a>
